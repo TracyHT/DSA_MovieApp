@@ -13,6 +13,7 @@ public class MovieDatabase {
         addMovie(new MovieItem(2,"Love Again", "Romance",104,"James C. Strouse", new String[]{"Actor 1"},"Something","https://m.media-amazon.com/images/M/MV5BNjQwZDIyNjAtZGQxMC00OTUwLWFiOWYtNzg2NDc5Mjc1MDQ5XkEyXkFqcGdeQXVyMTAxNzQ1NzI@._V1_.jpg",4));
 
     }
+
     public void addMovie(MovieItem movie) {
         allMovies.add(movie);
     }

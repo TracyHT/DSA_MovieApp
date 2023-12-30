@@ -86,6 +86,7 @@ public class MovieItem {
         this.imageUrl = synopsis;
     }
     // Constructor with basic information
+
     public MovieItem(int id, String title, String genre, int durationMinutes, String director, String[] actors, String synopsis, String imageUrl, int rating) {
         this.id = id;
         this.title = title;
@@ -104,6 +105,7 @@ public class MovieItem {
 
     public void setRating(int rating) {
         this.rating = rating;
+
     }
 
     // Additional methods as needed
