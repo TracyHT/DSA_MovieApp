@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.example.myapplication.R;
 import com.example.myapplication.ui.MainActivity;
+import com.example.myapplication.ui.movies.MoviesFragment;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText userEdt, passEdt;

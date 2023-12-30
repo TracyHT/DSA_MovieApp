@@ -9,6 +9,8 @@ public class MovieItem {
     private String[] actors;
     private String synopsis;
 
+    private int rating;
+
     private String imageUrl;
 
     // Constructors, getters, and setters
@@ -84,7 +86,7 @@ public class MovieItem {
         this.imageUrl = synopsis;
     }
     // Constructor with basic information
-    public MovieItem(int id, String title, String genre, int durationMinutes, String director, String[] actors, String synopsis, String imageUrl) {
+    public MovieItem(int id, String title, String genre, int durationMinutes, String director, String[] actors, String synopsis, String imageUrl, int rating) {
         this.id = id;
         this.title = title;
         this.genre = genre;
@@ -93,6 +95,15 @@ public class MovieItem {
         this.actors = actors;
         this.director = director;
         this.synopsis = synopsis;
+        this.rating = rating;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
     }
 
     // Additional methods as needed

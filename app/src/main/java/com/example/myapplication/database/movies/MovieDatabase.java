@@ -1,5 +1,4 @@
 package com.example.myapplication.database.movies;
-import com.github.javafaker.Faker;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,28 +9,10 @@ public class MovieDatabase {
 
     public MovieDatabase() {
         this.allMovies = new ArrayList<>();
+        addMovie(new MovieItem(1,"Drifting Home", "Action",120,"Hiroyasu Ishida", new String[]{"Actor 1"},"Kosuke and Natsume, sixth-grade students, play in an apartment building that will soon be destroyed over the summer holiday. They get evolved and entangled in a bizarre phenomenon. All they can see is a vast sea all around them.","https://upload.wikimedia.org/wikipedia/en/thumb/f/f9/Drifting_Home_Poster.jpg/220px-Drifting_Home_Poster.jpg",4));
+        addMovie(new MovieItem(2,"Love Again", "Romance",104,"James C. Strouse", new String[]{"Actor 1"},"Something","https://m.media-amazon.com/images/M/MV5BNjQwZDIyNjAtZGQxMC00OTUwLWFiOWYtNzg2NDc5Mjc1MDQ5XkEyXkFqcGdeQXVyMTAxNzQ1NzI@._V1_.jpg",4));
 
-        for (int i = 0; i < 20; i++) { //generateRandomMovie
-            MovieItem randomMovie = generateRandomMovie();
-            addMovie(randomMovie);
-        }
     }
-
-    // Helper method to generate a random movie using Faker library
-    private static MovieItem generateRandomMovie() {
-        Faker faker = new Faker();
-        int id = faker.number().randomDigitNotZero();
-        String title = faker.book().title();
-        String genre = faker.book().genre();
-        int durationMinutes = faker.number().numberBetween(60, 180);
-        String director = faker.name().fullName();
-        String[] actors = {faker.name().fullName(), faker.name().fullName(), faker.name().fullName()};
-        String synopsis = faker.lorem().paragraph();
-        String imageUrl = faker.internet().image();
-
-        return new MovieItem(id, title, genre, durationMinutes, director, actors, synopsis, imageUrl);
-    }
-
     public void addMovie(MovieItem movie) {
         allMovies.add(movie);
     }
