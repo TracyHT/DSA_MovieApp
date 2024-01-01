@@ -1,17 +1,17 @@
 package com.example.myapplication.Slider.Domain;
 
 public class SliderItems {
-    public SliderItems(int image) {
-        this.image = image;
+    private String imageUrl;
+
+    public SliderItems(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
-    private int image;
-
-    public int getImage() {
-        return image;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
-    public void setImage(int image) {
-        this.image = image;
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }

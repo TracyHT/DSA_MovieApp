@@ -70,7 +70,7 @@ public class SliderAdapter extends RecyclerView.Adapter<SliderAdapter.SliderView
             requestOptions = requestOptions.transforms(new CenterCrop(), new RoundedCorners(60));
 
             Glide.with(context)
-                    .load(sliderItems.getImage())
+                    .load(sliderItems.getImageUrl())
                     .apply(requestOptions)
                     .into(imageView);
         }
