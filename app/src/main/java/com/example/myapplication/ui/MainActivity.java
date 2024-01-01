@@ -1,7 +1,6 @@
 package com.example.myapplication.ui;
 
 import android.os.Bundle;
-
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.myapplication.R;
 import androidx.fragment.app.FragmentManager;
@@ -18,8 +17,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnItemSelectedListener(item -> {
