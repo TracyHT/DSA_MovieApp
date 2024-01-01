@@ -61,8 +61,11 @@ public class MainActivity extends AppCompatActivity {
 
         // Commit the transaction
         transaction.commit();
-        //homeActivity.initView();
-        //homeActivity.banners();
+        homeActivity.initView();
+        homeActivity.banners();
+        homeActivity.sendRequestBestMovies();
+        homeActivity.sendRequestUpComming();
+        homeActivity.sendRequestCategories();
     }
 
     private void loadTicketFragment() {

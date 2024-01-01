@@ -2,7 +2,6 @@ package com.example.myapplication.Slider.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.telecom.Call;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,50 +16,42 @@ import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.myapplication.R;
+import com.example.myapplication.Slider.Domain.GenreItems;
 import com.example.myapplication.Slider.Domain.ListFilm;
-import com.example.myapplication.ui.home.HomeActivity;
 import com.example.myapplication.ui.movies.ActionFragment;
 
-public class FilmListAdapter extends RecyclerView.Adapter<FilmListAdapter.ViewHolder> {
-    ListFilm items;
+import java.util.ArrayList;
+
+public class CategoriesListAdapter extends RecyclerView.Adapter<CategoriesListAdapter.ViewHolder> {
+    ArrayList<GenreItems> items;
     Context context;
 
-    public FilmListAdapter(ListFilm items) {
+    public CategoriesListAdapter(ArrayList<GenreItems> items) {
         this.items = items;
     }
 
     @NonNull
     @Override
-    public FilmListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public CategoriesListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         context = parent.getContext();
-        View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.viewholder_film,parent,false);
+        View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.viewholder_categories,parent,false);
         return new ViewHolder(inflate);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull FilmListAdapter.ViewHolder holder, int position) {
-    holder.titleTxt.setText(items.getData().get(position).getTitle());
-    RequestOptions requestOptions = new RequestOptions();
-    requestOptions = requestOptions.transform(new CenterCrop(), new RoundedCorners(30));
-    Glide.with(context)
-            .load(items.getData().get(position).getPoster())
-            .apply(requestOptions)
-            .into(holder.pic);
+    public void onBindViewHolder(@NonNull CategoriesListAdapter.ViewHolder holder, int position) {
+    holder.titleTxt.setText(items.get(position).getName());
 
-    holder.itemView.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Intent intent = new Intent(holder.itemView.getContext(), ActionFragment.class);
-            intent.putExtra("id",items.getData().get(position).getId());
-            context.startActivity(intent);
-        }
+
+    holder.itemView.setOnClickListener(v ->  {
+
     });
     }
 
     @Override
     public int getItemCount() {
 
-        return items.getData().size();
+        return items.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
