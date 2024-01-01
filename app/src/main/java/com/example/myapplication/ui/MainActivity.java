@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.myapplication.R;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+
+import com.example.myapplication.ui.home.HomeFragment;
 import com.example.myapplication.ui.movies.MoviesFragment;
 import com.example.myapplication.ui.profile.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -33,13 +35,30 @@ public class MainActivity extends AppCompatActivity {
                 loadProfileFragment();
                 return true;
             } else {
+                loadHomeFragment();
                 return false;
             }
         });
+
     }
+
 
     private void loadHomeFragment() {
         // Implement the logic to load the HomeFragment here
+        HomeFragment homeFragment = new HomeFragment();
+
+
+        // Use a FragmentManager to handle the fragment transactions
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+
+        // Replace the existing fragment (if any) with the ProfileFragment
+        transaction.replace(R.id.fragment_container, homeFragment);
+
+        // Commit the transaction
+        transaction.commit();
+        //homeActivity.initView();
+        //homeActivity.banners();
     }
 
     private void loadTicketFragment() {
@@ -73,4 +92,6 @@ public class MainActivity extends AppCompatActivity {
         // Commit the transaction
         transaction.commit();
     }
+
+
 }
