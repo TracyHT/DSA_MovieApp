@@ -7,7 +7,6 @@ import com.example.myapplication.R;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.myapplication.ui.home.HomeActivity;
 import com.example.myapplication.ui.home.HomeFragment;
 import com.example.myapplication.ui.movies.MoviesFragment;
 import com.example.myapplication.ui.profile.ProfileFragment;
@@ -39,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
                 loadProfileFragment();
                 return true;
             } else {
+                loadHomeFragment();
                 return false;
             }
         });
@@ -49,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
     private void loadHomeFragment() {
         // Implement the logic to load the HomeFragment here
         HomeFragment homeFragment = new HomeFragment();
-        HomeActivity homeActivity = new HomeActivity();
 
 
         // Use a FragmentManager to handle the fragment transactions
