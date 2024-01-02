@@ -13,4 +13,7 @@
     <string name="about">About</string>
     <string name="hi_username">Hi UserName!</string>
     <string name="log_out">Log Out</string>
+    <string name="location_near_you">Cinemas Near You</string>
+
+
 </resources>
