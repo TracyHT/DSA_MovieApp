@@ -46,6 +46,18 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
                 .into(holder.moviePoster);
     }
 
+    public void onBindViewHolderCategories(@NonNull MovieViewHolder holder, int position) {
+        MovieItem movie = movies.get(position);
+
+        // Set movie name
+        holder.movieName.setText(movie.getGenre());
+
+        // Load movie poster using Glide
+        Glide.with(context)
+                .load(movie.getImageUrl())
+                .into(holder.moviePoster);
+    }
+
     @Override
     public int getItemCount() {
         return movies.size();

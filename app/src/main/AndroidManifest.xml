@@ -22,6 +22,12 @@
             android:name=".ui.login.LoginActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.register.RegisterActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".ui.ticket.TicketFragment"
+            android:exported="false"/>
+        <activity
             android:name=".ui.intro.IntroActivity"
             android:exported="true"
             android:label="@string/app_name" >

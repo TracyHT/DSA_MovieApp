@@ -33,7 +33,9 @@ public class LocationFragment extends Fragment {
         // Set up the Spinner
         ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(
                 requireContext(),
+
                 R.layout.spinner_item,  // Use the custom layout for spinner items
+                android.R.layout.simple_spinner_item,
                 getSpinnerData()
         );
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
