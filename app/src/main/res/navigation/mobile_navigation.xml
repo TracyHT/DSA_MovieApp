@@ -18,9 +18,9 @@
         tools:layout="@layout/fragment_movies" />
 
     <fragment
-        android:id="@+id/navigation_ticket"
-        android:name="com.example.myapplication.ui.ticket.TicketFragment"
-        android:label="@string/title_ticket"
+        android:id="@+id/navigation_location"
+        android:name="com.example.myapplication.ui.location.LocationFragment"
+        android:label="@string/title_location"
         tools:layout="@layout/fragment_location" />
     <fragment
         android:id="@+id/navigation_profile"

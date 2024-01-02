@@ -1,6 +1,7 @@
-// DramaFragment.java
+// ComedyFragment.java
 package com.example.myapplication.ui.movies;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,8 +14,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.databinding.FragmentComedyBinding;
+import com.example.myapplication.ui.detailFilm.DetailActivity;
 
-public class ComedyFragment extends Fragment {
+public class ComedyFragment extends Fragment implements MovieAdapter.OnMovieItemClickListener {
     private FragmentComedyBinding binding;
     private MoviesViewModel moviesViewModel;
     private MovieAdapter movieAdapter;
@@ -29,14 +31,17 @@ public class ComedyFragment extends Fragment {
         moviesViewModel = new ViewModelProvider(this).get(MoviesViewModel.class);
 
         // Initialize RecyclerView and Adapter
-        movieAdapter = new MovieAdapter();
+        movieAdapter = new MovieAdapter(requireContext());
         RecyclerView recyclerViewMovies = binding.recyclerViewComedy;
         recyclerViewMovies.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerViewMovies.setAdapter(movieAdapter);
 
-        // Observe changes in the drama movies list
-        moviesViewModel.findMoviesByGenre("Comedy").observe(getViewLifecycleOwner(), dramaMovies -> {
-            movieAdapter.setMovies(dramaMovies);
+        // Set the click listener in MovieAdapter
+        movieAdapter.setOnMovieItemClickListener(this);
+
+        // Observe changes in the comedy movies list
+        moviesViewModel.findMoviesByGenre("Comedy").observe(getViewLifecycleOwner(), comedyMovies -> {
+            movieAdapter.setMovies(comedyMovies);
         });
 
         return root;
@@ -46,5 +51,13 @@ public class ComedyFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    @Override
+    public void onMovieItemClick(int movieId) {
+        // Handle the click event here, e.g., start a new activity with movie details
+        Intent intent = new Intent(getActivity(), DetailActivity.class);
+        intent.putExtra("id", movieId);
+        startActivity(intent);
     }
 }
