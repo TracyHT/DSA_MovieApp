@@ -95,15 +95,14 @@
                 android:textAlignment="center"
                 android:layout_marginTop="32dp"/>
 
-            <TextView
-                android:id="@+id/register"
+            <Button
+                android:id="@+id/buttonRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Register Now"
                 android:textAlignment="center"
-                android:textColor="@color/text_white"
-                android:textSize="16sp"
-                android:textStyle="bold"/>
+                android:background="@android:color/transparent"
+                android:textColor="@color/text_white"/>
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
