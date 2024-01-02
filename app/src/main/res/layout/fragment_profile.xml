@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/profile_layout"
+    android:id="@+id/imageButton"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/main_theme"
@@ -10,7 +10,9 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="-80dp"
+        tools:layout_editor_absoluteY="-65dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -22,28 +24,29 @@
                 android:layout_width="350dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="30dp"
-                android:layout_marginEnd="40dp"
                 android:layout_marginTop="40dp"
+                android:layout_marginEnd="40dp"
                 android:text="@string/welcomeback_user"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#CDDEF6"
+                android:textColor="#E47451"
                 android:textDirection="firstStrongRtl"
                 android:textIsSelectable="false"
                 android:textSize="34sp"
                 android:textStyle="bold"
                 tools:ignore="TextSizeCheck" />
 
-            <ImageButton
-                android:id="@+id/imageButton"
-                android:layout_width="98dp"
-                android:layout_height="80dp"
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_marginStart="150dp"
                 android:layout_marginTop="30dp"
-                android:layout_marginEnd="50dp"
-                android:background="#1E88E5"
-                android:contentDescription="@string/todo"
-                tools:ignore="ContentDescription,ImageContrastCheck" />
+                android:layout_marginEnd="150dp"
+                android:background="@drawable/profile_background"
+                android:src="@drawable/profile_image"
+
+                />
 
             <Button
                 android:id="@+id/edit_info"

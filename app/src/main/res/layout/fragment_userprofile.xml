@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_theme">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtview_HiUser"
+                tools:ignore="TextSizeCheck"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="40dp"
+                android:text="User Information"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="#E47451"
+                android:textDirection="firstStrongRtl"
+                android:textIsSelectable="false"
+                android:textSize="34sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginStart="150dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="150dp"
+                android:background="@drawable/profile_background"
+                android:src="@drawable/profile_image" />
+
+            <TextView
+                android:id="@+id/Email"
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="90dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="30dp"
+                android:text="Email:"
+                android:textColor="@color/text_white" />
+
+            <TextView
+                android:id="@+id/EmailTxt"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="180dp"
+                android:layout_marginTop="-50dp"
+                android:layout_marginEnd="30dp"
+                android:text="TextView"
+                android:textColor="@color/text_white" />
+
+            <TextView
+                android:id="@+id/Phone"
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="90dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="30dp"
+                android:text="Phone:"
+                android:textColor="@color/text_white" />
+
+            <TextView
+                android:id="@+id/PhoneTxt"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="180dp"
+                android:layout_marginTop="-50dp"
+                android:layout_marginEnd="30dp"
+                android:text="TextView"
+                android:textColor="@color/text_white" />
+
+            <TextView
+                android:id="@+id/Username"
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="90dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="30dp"
+                android:text="Username:"
+                android:textColor="@color/text_white" />
+
+            <TextView
+                android:id="@+id/UsernameTxt"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="180dp"
+                android:layout_marginTop="-50dp"
+                android:layout_marginEnd="30dp"
+                android:text="TextView"
+                android:textColor="@color/text_white" />
+
+            <TextView
+                android:id="@+id/Password"
+                android:layout_width="70dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="90dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="30dp"
+                android:text="Password:"
+                android:textColor="@color/text_white" />
+
+            <TextView
+                android:id="@+id/PasswordTxt"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="180dp"
+                android:layout_marginTop="-50dp"
+                android:layout_marginEnd="30dp"
+                android:text="TextView"
+                android:textColor="@color/text_white" />
+
+            <Button
+                android:id="@+id/backButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:text="Back to Profile"
+                android:onClick="goBackToProfile" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
