@@ -29,8 +29,8 @@ public class MainActivity extends AppCompatActivity {
             } else if (itemId == R.id.navigation_movies) {
                 loadMoviesFragment();
                 return true;
-            } else if (itemId == R.id.navigation_ticket) {
-                loadTicketFragment();
+            } else if (itemId == R.id.navigation_location) {
+                loadLocationFragment();
                 return true;
             } else if (itemId == R.id.navigation_profile) {
                 loadProfileFragment();
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         //homeActivity.banners();
     }
 
-    private void loadTicketFragment() {
+    private void loadLocationFragment() {
         LocationFragment locationFragment = new LocationFragment();
 
         // Use a FragmentManager to handle the fragment transactions

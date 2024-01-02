@@ -25,7 +25,7 @@
             android:name=".ui.register.RegisterActivity"
             android:exported="false"/>
         <activity
-            android:name=".ui.ticket.TicketFragment"
+            android:name=".ui.detailFilm.DetailActivity"
             android:exported="false"/>
         <activity
             android:name=".ui.intro.IntroActivity"
