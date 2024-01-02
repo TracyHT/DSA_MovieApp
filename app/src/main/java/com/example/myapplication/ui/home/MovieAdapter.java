@@ -20,6 +20,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
 
     private final List<MovieItem> movies;
     private final Context context;
+    private boolean isCategoryType;
 
     public MovieAdapter(List<MovieItem> movies, Context context) {
         this.movies = movies;
@@ -37,25 +38,23 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
     public void onBindViewHolder(@NonNull MovieViewHolder holder, int position) {
         MovieItem movie = movies.get(position);
 
-        // Set movie name
-        holder.movieName.setText(movie.getTitle());
+        if (isCategoryType) {
+            // If it's a category type, set movie type (genre) instead of movie name
+            holder.movieName.setText(movie.getGenre());
+        } else {
+            // Otherwise, set movie name
+            holder.movieName.setText(movie.getTitle());
+        }
 
         // Load movie poster using Glide
         Glide.with(context)
                 .load(movie.getImageUrl())
                 .into(holder.moviePoster);
-    }
+        }
 
-    public void onBindViewHolderCategories(@NonNull MovieViewHolder holder, int position) {
-        MovieItem movie = movies.get(position);
-
-        // Set movie name
-        holder.movieName.setText(movie.getGenre());
-
-        // Load movie poster using Glide
-        Glide.with(context)
-                .load(movie.getImageUrl())
-                .into(holder.moviePoster);
+    // Add this method to set the category type flag
+    public void setCategoryType(boolean isCategoryType) {
+        this.isCategoryType = isCategoryType;
     }
 
     @Override

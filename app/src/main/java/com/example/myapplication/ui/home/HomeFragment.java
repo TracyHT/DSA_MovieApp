@@ -64,8 +64,8 @@ public class HomeFragment extends Fragment {
     private void initView() {
         // Set up RecyclerViews
         RecyclerView recyclerViewBestMovies = binding.view1;
-        RecyclerView recyclerViewUpcoming = binding.view2;
-        RecyclerView recyclerViewCategories = binding.view3;
+        RecyclerView recyclerViewCategories = binding.view2;
+        RecyclerView recyclerViewUpcoming = binding.view3;
 
         // Set up LayoutManagers
         LinearLayoutManager layoutManagerBestMovies = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
@@ -78,16 +78,23 @@ public class HomeFragment extends Fragment {
 
         // Add your adapters and populate data
         List<MovieItem> bestMovies = movieDatabase.findMoviesByAttribute("genre", "Action");
-        List<MovieItem> upcomingMovies = movieDatabase.findMoviesByAttribute("genre", "Upcoming");
-        List<MovieItem> categoryMovies = movieDatabase.findMoviesByAttribute("genre", "Romance");
+        List<MovieItem> categoriesMovies = new ArrayList<>();
+        categoriesMovies.add(movieDatabase.findMovieByGenreAndLowestId("Drama"));
+        categoriesMovies.add(movieDatabase.findMovieByGenreAndLowestId("Comedy"));
+        categoriesMovies.add(movieDatabase.findMovieByGenreAndLowestId("Action"));
+        categoriesMovies.add(movieDatabase.findMovieByGenreAndLowestId("Romance"));
+        List<MovieItem> upcomingMovies = movieDatabase.findMoviesByAttribute("genre", "Romance");
 
         MovieAdapter bestMoviesAdapter = new MovieAdapter(bestMovies, requireContext());
         MovieAdapter upcomingMoviesAdapter = new MovieAdapter(upcomingMovies, requireContext());
-        MovieAdapter categoryMoviesAdapter = new MovieAdapter(categoryMovies, requireContext());
+        MovieAdapter categoryMoviesAdapter = new MovieAdapter(categoriesMovies, requireContext());
+
+        categoryMoviesAdapter.setCategoryType(true);
 
         recyclerViewBestMovies.setAdapter(bestMoviesAdapter);
-        recyclerViewUpcoming.setAdapter(upcomingMoviesAdapter);
         recyclerViewCategories.setAdapter(categoryMoviesAdapter);
+        recyclerViewUpcoming.setAdapter(upcomingMoviesAdapter);
+
     }
 
     private void banners() {
