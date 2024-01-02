@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -13,10 +12,8 @@
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -38,8 +35,8 @@
                 android:layout_height="200dp"
                 android:background="@drawable/gradient_background"
                 app:layout_constraintBottom_toBottomOf="@+id/picDetail"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayout"
@@ -49,8 +46,8 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
-                app:layout_constraintEnd_toEndOf="@+id/picDetail"
-                app:layout_constraintStart_toStartOf="@+id/picDetail"
+                app:layout_constraintEnd_toStartOf="@+id/picDetail"
+                app:layout_constraintStart_toEndOf="@+id/picDetail"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
@@ -119,7 +116,7 @@
                 android:layout_marginBottom="16dp"
                 android:text="TextView"
                 android:textColor="@color/text_white"
-                android:textSize="32dp"
+                android:textSize="20sp"
                 app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
                 app:layout_constraintEnd_toEndOf="@+id/constraintLayout3"
                 app:layout_constraintStart_toStartOf="@+id/constraintLayout3" />
@@ -127,13 +124,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/genreView"
                 android:layout_width="match_parent"
-<<<<<<< Updated upstream
                 android:layout_height="match_parent"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-=======
-                android:layout_height="wrap_content"
->>>>>>> Stashed changes
                 android:paddingStart="8dp"
                 android:paddingEnd="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -142,72 +133,58 @@
 
             <TextView
                 android:id="@+id/movieSummary"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="24dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
                 android:text="Summary"
                 android:textColor="@color/yellow"
                 android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/genreView" />
 
             <TextView
-                android:id="@+id/summaryText"
-                android:layout_width="0dp"
+                android:id="@+id/textView15"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
                 android:text="test"
                 android:textColor="@color/text_white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/movieSummary" />
-
-            <TextView
-                android:id="@+id/movieActor"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:text="Actors"
-                android:textColor="@color/yellow"
-                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/movieSummary"
-                app:layout_constraintTop_toBottomOf="@+id/summaryText" />
+                app:layout_constraintTop_toBottomOf="@+id/movieSummary" />
 
             <TextView
-                android:id="@+id/movieActorText"
-                android:layout_width="0dp"
+                android:id="@+id/textView16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Actors"
+                android:textColor="@color/yellow"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/movieSummary"
+                app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+            <TextView
+                android:id="@+id/movieActorInfo"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
                 android:text="test"
                 android:textColor="@color/text_white"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/movieSummary"
-                app:layout_constraintTop_toBottomOf="@+id/movieActor" />
+                app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/imageRecycler"
                 android:layout_width="match_parent"
-<<<<<<< Updated upstream
                 android:layout_height="match_parent"
-                android:layout_marginTop="8dp"
-=======
-                android:layout_height="wrap_content"
                 android:paddingEnd="8dp"
->>>>>>> Stashed changes
                 android:paddingStart="8dp"
-                android:paddingEnd="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/movieActorText" />
+                app:layout_constraintTop_toBottomOf="@+id/movieActorInfo" />
 
             <ProgressBar
                 android:id="@+id/progressBarDetail"
@@ -215,17 +192,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:visibility="gone"
-<<<<<<< Updated upstream
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
                 app:layout_editor_absoluteX="182dp"
                 app:layout_editor_absoluteY="445dp" />
-=======
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
->>>>>>> Stashed changes
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
