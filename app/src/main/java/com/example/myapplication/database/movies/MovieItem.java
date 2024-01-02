@@ -1,5 +1,8 @@
 package com.example.myapplication.database.movies;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MovieItem {
     private int id;
     private String title;
@@ -60,7 +63,7 @@ public class MovieItem {
     }
 
     // Getter and setter for actors
-    public String[] getActors() {
+    public CharSequence[] getActors() {
         return actors;
     }
 
@@ -106,6 +109,11 @@ public class MovieItem {
     public void setRating(int rating) {
         this.rating = rating;
 
+    }
+
+    public List<String> getImages() {
+        List<String> Imagelist = new ArrayList<>();
+        return Imagelist;
     }
 
     // Additional methods as needed

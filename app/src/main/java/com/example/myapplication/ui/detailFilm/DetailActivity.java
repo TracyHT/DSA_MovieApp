@@ -1,18 +1,10 @@
 package com.example.myapplication.ui.detailFilm;
 
-import android.app.DownloadManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-import com.google.gson.Gson;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.widget.NestedScrollView;
@@ -20,35 +12,35 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.FilmItem;
 import com.example.myapplication.R;
+import com.example.myapplication.database.movies.MovieDatabase;
+import com.example.myapplication.database.movies.MovieItem;
 import com.example.myapplication.ui.adapters.ActorsListAdapter;
-//import com.example.myapplication.ui.adapters.CategoryEachFilmListAdapter;
 
 public class DetailActivity extends AppCompatActivity {
-    private RequestQueue mRequestQueue;
-    private StringRequest mStringRequest;
     private ProgressBar progressBar;
-    private TextView titleText, movieRateTxt, movieTimeTxt, movieSummaryInfo, movieActorsInfo;
+    private TextView titleText, movieRateTxt, movieTimeTxt, movieSummaryInfo;
     private int idFilm;
     private ImageView pic2, backImg;
-    private RecyclerView.Adapter adapterActorList, adapterCategory;
-    private RecyclerView recyclerViewActors, recyclerViewCategory;
+    private RecyclerView.Adapter adapterActorList;
+    private RecyclerView recyclerViewActors;
     private NestedScrollView scrollView;
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.detail_film);
 
         idFilm = getIntent().getIntExtra("id", 0);
         initView();
-        sendRequest();
+        bindData();
     }
 
-    private void sendRequest() {
-        mRequestQueue = Volley.newRequestQueue(this);
-        progressBar.setVisibility(View.VISIBLE);
-        scrollView.setVisibility(View.GONE);
+    private void bindData() {
+        MovieDatabase movieDatabase = new MovieDatabase();
+        MovieItem movieItem = movieDatabase.findMovieById(idFilm);
 
+<<<<<<< Updated upstream
         mStringRequest = new StringRequest(Request.Method.GET, "https://moviesapi.ir/api/v1/movies/" + idFilm, response ->  {
             Gson gson = new Gson();
             progressBar.setVisibility(View.GONE);
@@ -73,6 +65,28 @@ public class DetailActivity extends AppCompatActivity {
 //                }
         }, error -> progressBar.setVisibility(View.GONE));
         mRequestQueue.add(mStringRequest);
+=======
+        if (movieItem != null) {
+            progressBar.setVisibility(View.GONE);
+            scrollView.setVisibility(View.VISIBLE);
+
+            Glide.with(this).load(movieItem.getImageUrl()).into(pic2);
+
+            titleText.setText(movieItem.getTitle());
+            movieRateTxt.setText(String.valueOf(movieItem.getRating()));
+            movieTimeTxt.setText(String.valueOf(movieItem.getDurationMinutes()));
+            movieSummaryInfo.setText(movieItem.getSynopsis());
+
+            // Assuming you have an 'Images' class within MovieItem
+            if (movieItem.getImages() != null) {
+                adapterActorList = new ActorsListAdapter(movieItem.getImages());
+                recyclerViewActors.setAdapter(adapterActorList);
+            }
+        } else {
+            // Handle the case where the movie with the specified id is not found
+            progressBar.setVisibility(View.GONE);
+        }
+>>>>>>> Stashed changes
     }
 
     private void initView() {
@@ -82,13 +96,15 @@ public class DetailActivity extends AppCompatActivity {
         pic2 = findViewById(R.id.picDetail);
         movieRateTxt = findViewById(R.id.movieStar);
         movieTimeTxt = findViewById(R.id.movieTime);
+<<<<<<< Updated upstream
         movieSummaryInfo = findViewById(R.id.summaryText);
         movieActorsInfo = findViewById(R.id.movieActorText);
+=======
+        movieSummaryInfo = findViewById(R.id.movieSummary);
+>>>>>>> Stashed changes
         backImg = findViewById(R.id.backImg);
-        recyclerViewCategory = findViewById(R.id.genreView);
         recyclerViewActors = findViewById(R.id.imageRecycler);
-        recyclerViewActors.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
-        recyclerViewCategory.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
+        recyclerViewActors.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
         backImg.setOnClickListener(v -> finish());
     }

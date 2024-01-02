@@ -27,6 +27,15 @@ public class MovieDatabase {
         allMovies.add(movie);
     }
 
+    public MovieItem findMovieById(int id) {
+        for (MovieItem movie : allMovies) {
+            if (movie.getId() == id) {
+                return movie;
+            }
+        }
+        return null; // Return null if no movie with the given ID is found
+    }
+
     public List<MovieItem> getAllMovies() {
         return new ArrayList<>(allMovies);
     }
