@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.myapplication.R;
+import com.example.myapplication.database.user.User;
+import com.example.myapplication.database.user.UserDatabase;
 import com.example.myapplication.ui.MainActivity;
 import com.example.myapplication.ui.register.RegisterActivity;
 
@@ -43,7 +45,14 @@ public class LoginActivity extends AppCompatActivity {
                 } else if (userEdt.getText().toString().equals("demo") && passEdt.getText().toString().equals("demo")) {
                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
                 } else {
-                    Toast.makeText(LoginActivity.this,"Your username or password is not correct", Toast.LENGTH_SHORT).show();
+                    String usernameToCheck = userEdt.getText().toString();
+                    User foundUser = UserDatabase.getInstance().findUserByUsername(usernameToCheck);
+
+                    if (foundUser != null && foundUser.getPassword().equals(passEdt.getText().toString())) {
+                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                    } else {
+                        Toast.makeText(LoginActivity.this, "Your username or password is not correct", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });
@@ -54,5 +63,13 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
             }
         });
+    }
+    public User findUserById(int userId) {
+        for (User user : UserDatabase.getInstance().getAllUsers()) {
+            if (user.getUserid() == userId) {
+                return user;
+            }
+        }
+        return null; // User with the specified ID not found
     }
 }
