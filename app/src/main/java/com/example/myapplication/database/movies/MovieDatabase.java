@@ -60,7 +60,16 @@ public class MovieDatabase {
         }
         return foundMovies;
     }
+    public MovieItem findMovieByGenreAndLowestId(String genre) {
+        MovieItem foundMovie = null;
+        int lowestId = Integer.MAX_VALUE;
 
+        for (MovieItem movie : allMovies) {
+            if (movie.getGenre().equalsIgnoreCase(genre) && movie.getId() < lowestId) {
+                foundMovie = movie;
+                lowestId = movie.getId();
+            }
+        }
     public MovieItem findMovieById(int id) {
         for (MovieItem movie : allMovies) {
             if (movie.getId() == id) {

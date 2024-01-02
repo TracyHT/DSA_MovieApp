@@ -27,4 +27,13 @@ public class UserDatabase {
         return allUser;
     }
 
+    public User findUserByUsername(String username) {
+        for (User user : allUser) {
+            if (user.getUsername().equals(username)) {
+                return user;
+            }
+        }
+        return null; // User with the specified username not found
+    }
+
 }
