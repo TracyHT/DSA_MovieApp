@@ -52,6 +52,20 @@ public class MovieDatabase {
         return foundMovies;
     }
 
+    public MovieItem findMovieByGenreAndLowestId(String genre) {
+        MovieItem foundMovie = null;
+        int lowestId = Integer.MAX_VALUE;
+
+        for (MovieItem movie : allMovies) {
+            if (movie.getGenre().equalsIgnoreCase(genre) && movie.getId() < lowestId) {
+                foundMovie = movie;
+                lowestId = movie.getId();
+            }
+        }
+
+        return foundMovie;
+    }
+
     // You can add more search methods for different attributes as needed
 }
 
