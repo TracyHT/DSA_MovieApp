@@ -10,6 +10,7 @@ import com.example.myapplication.ui.home.HomeFragment;
 import com.example.myapplication.ui.movies.MoviesFragment;
 import com.example.myapplication.ui.profile.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.example.myapplication.ui.location.LocationFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -62,7 +63,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void loadTicketFragment() {
-        // Implement the logic to load the TicketFragment here
+        LocationFragment locationFragment = new LocationFragment();
+
+        // Use a FragmentManager to handle the fragment transactions
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+
+        // Replace the existing fragment (if any) with the ProfileFragment
+        transaction.replace(R.id.fragment_container, locationFragment);
+
+        // Commit the transaction
+        transaction.commit();
     }
 
     private void loadProfileFragment() {

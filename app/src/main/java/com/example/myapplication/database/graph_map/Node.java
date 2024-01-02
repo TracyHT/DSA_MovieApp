@@ -1,19 +1,20 @@
 package com.example.myapplication.database.graph_map;
 
-import androidx.dynamicanimation.animation.SpringAnimation;
-
 // Node.java
 public class Node {
 
     private String label; // Use "label" instead of "nodeName"
+
+    private int type;
     private double x; // Arbitrary X coordinate
     private double y; // Arbitrary Y coordinate
 
     private  int id;
 
-    public Node(int id, String label, double x, double y) {
+    public Node(int id, String label, int type, double x, double y) {
         this.id = id;
         this.label = label;
+        this.type = type;
         this.x = x;
         this.y = y;
     }
@@ -49,6 +50,14 @@ public class Node {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type; //if type = 0, it is a movie theater location and 1 otherwise
     }
 }
 
