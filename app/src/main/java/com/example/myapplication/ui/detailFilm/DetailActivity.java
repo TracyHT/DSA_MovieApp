@@ -50,23 +50,23 @@ public class DetailActivity extends AppCompatActivity {
         scrollView.setVisibility(View.GONE);
 
         mStringRequest = new StringRequest(Request.Method.GET, "https://moviesapi.ir/api/v1/movies/" + idFilm, response ->  {
-                Gson gson = new Gson();
-                progressBar.setVisibility(View.GONE);
-                scrollView.setVisibility(View.VISIBLE);
+            Gson gson = new Gson();
+            progressBar.setVisibility(View.GONE);
+            scrollView.setVisibility(View.VISIBLE);
 
-                FilmItem item = gson.fromJson(response, FilmItem.class);
+            FilmItem item = gson.fromJson(response, FilmItem.class);
 
-                Glide.with(DetailActivity.this).load(item.getPoster()).into(pic2);
+            Glide.with(DetailActivity.this).load(item.getPoster()).into(pic2);
 
-                titleText.setText(item.getTitle());
-                movieRateTxt.setText(item.getImdbRating());
-                movieTimeTxt.setText(item.getRuntime());
-                movieSummaryInfo.setText(item.getPlot());
-                movieActorsInfo.setText(item.getActors());
-                if (item.getImages() != null) {
-                    adapterActorList = new ActorsListAdapter(item.getImages());
-                    recyclerViewActors.setAdapter(adapterActorList);
-                }
+            titleText.setText(item.getTitle());
+            movieRateTxt.setText(item.getImdbRating());
+            movieTimeTxt.setText(item.getRuntime());
+            movieSummaryInfo.setText(item.getPlot());
+            movieActorsInfo.setText(item.getActors());
+            if (item.getImages() != null) {
+                adapterActorList = new ActorsListAdapter(item.getImages());
+                recyclerViewActors.setAdapter(adapterActorList);
+            }
 //                if (item.getGenres()) != null) {
 //                    adapterCategory = new CategoryEachFilmListAdapter(item.getGenres());
 //                    recyclerViewCategory.setAdapter(adapterCategory);
@@ -82,8 +82,8 @@ public class DetailActivity extends AppCompatActivity {
         pic2 = findViewById(R.id.picDetail);
         movieRateTxt = findViewById(R.id.movieStar);
         movieTimeTxt = findViewById(R.id.movieTime);
-        movieSummaryInfo = findViewById(R.id.movieSummary);
-        movieActorsInfo = findViewById(R.id.movieActorInfo);
+        movieSummaryInfo = findViewById(R.id.summaryText);
+        movieActorsInfo = findViewById(R.id.movieActorText);
         backImg = findViewById(R.id.backImg);
         recyclerViewCategory = findViewById(R.id.genreView);
         recyclerViewActors = findViewById(R.id.imageRecycler);

@@ -1,15 +1,17 @@
 package com.example.myapplication.ui.movies;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.RatingBar;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
-import com.example.myapplication.R; // Replace with the actual R class of your application
+import com.example.myapplication.R;
 import com.example.myapplication.database.movies.MovieItem;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,10 +19,20 @@ import java.util.List;
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHolder> {
 
     private List<MovieItem> movies = new ArrayList<>();
+    private OnMovieItemClickListener onMovieItemClickListener;
+    private Context context; // Added context for Glide and resources
+
+    public MovieAdapter(Context context) {
+        this.context = context;
+    }
 
     public void setMovies(List<MovieItem> movies) {
         this.movies = movies;
         notifyDataSetChanged();
+    }
+
+    public void setOnMovieItemClickListener(OnMovieItemClickListener listener) {
+        this.onMovieItemClickListener = listener;
     }
 
     @NonNull
@@ -39,9 +51,10 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         holder.textViewGenre.setText(movie.getGenre());
 
         // Load movie poster using Glide library
-        Glide.with(holder.itemView.getContext())
+        Glide.with(context)
                 .load(movie.getImageUrl())
-                .placeholder(R.drawable.ic_launcher_background)
+                .placeholder(R.drawable.ic_launcher_background) // Replace with an appropriate placeholder
+                .error(R.drawable.ic_launcher_background) // Replace with an appropriate error image
                 .into(holder.imageViewPoster);
 
         // Set movie rating
@@ -53,7 +66,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         return movies.size();
     }
 
-    static class MovieViewHolder extends RecyclerView.ViewHolder {
+    public class MovieViewHolder extends RecyclerView.ViewHolder {
         ImageView imageViewPoster;
         TextView textViewTitle;
         TextView textViewGenre;
@@ -65,7 +78,22 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
             textViewTitle = itemView.findViewById(R.id.textViewMovieTitle);
             textViewGenre = itemView.findViewById(R.id.textViewMovieGenre);
             ratingBar = itemView.findViewById(R.id.ratingBar);
+
             // Initialize other views as needed
+
+            itemView.setOnClickListener(v -> {
+                if (onMovieItemClickListener != null) {
+                    int position = getAdapterPosition();
+                    if (position != RecyclerView.NO_POSITION) {
+                        MovieItem clickedMovie = movies.get(position);
+                        onMovieItemClickListener.onMovieItemClick(clickedMovie.getId());
+                    }
+                }
+            });
         }
+    }
+
+    public interface OnMovieItemClickListener {
+        void onMovieItemClick(int movieId);
     }
 }

@@ -4,14 +4,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
-
 import com.example.myapplication.databinding.FragmentMoviesBinding;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
@@ -33,9 +31,9 @@ public class MoviesFragment extends Fragment {
         moviesViewModel = new ViewModelProvider(this).get(MoviesViewModel.class);
 
         // Initialize RecyclerView and Adapter
-        movieAdapter = new MovieAdapter();
+        movieAdapter = new MovieAdapter(requireContext()); // Passing context to the adapter
         RecyclerView recyclerViewMovies = binding.recyclerViewMovies;
-        recyclerViewMovies.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerViewMovies.setLayoutManager(new LinearLayoutManager(requireContext()));
         recyclerViewMovies.setAdapter(movieAdapter);
 
         // Initialize ViewPager2 and TabLayout
@@ -43,7 +41,7 @@ public class MoviesFragment extends Fragment {
         TabLayout tabLayout = binding.tabLayout;
 
         // Set up the ViewPager2 adapter
-        viewPagerAdapter = new ViewPagerAdapter(getActivity());
+        viewPagerAdapter = new ViewPagerAdapter(requireActivity());
         viewPager2.setAdapter(viewPagerAdapter);
 
         // Connect TabLayout with ViewPager2 using TabLayoutMediator
@@ -55,8 +53,7 @@ public class MoviesFragment extends Fragment {
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                int position = tab.getPosition();
-                updateMovieList(position);
+                updateMovieList(tab.getPosition());
             }
 
             @Override
@@ -96,24 +93,16 @@ public class MoviesFragment extends Fragment {
         // Update the movie list based on the selected tab
         switch (tabPosition) {
             case 0:
-                moviesViewModel.getDramaMovies().observe(getViewLifecycleOwner(), movies -> {
-                    movieAdapter.setMovies(movies);
-                });
+                moviesViewModel.getDramaMovies().observe(getViewLifecycleOwner(), movieAdapter::setMovies);
                 break;
             case 1:
-                moviesViewModel.getComedyMovies().observe(getViewLifecycleOwner(), movies -> {
-                    movieAdapter.setMovies(movies);
-                });
+                moviesViewModel.getComedyMovies().observe(getViewLifecycleOwner(), movieAdapter::setMovies);
                 break;
             case 2:
-                moviesViewModel.getActionMovies().observe(getViewLifecycleOwner(), movies -> {
-                    movieAdapter.setMovies(movies);
-                });
+                moviesViewModel.getActionMovies().observe(getViewLifecycleOwner(), movieAdapter::setMovies);
                 break;
             case 3:
-                moviesViewModel.getRomanceMovies().observe(getViewLifecycleOwner(), movies -> {
-                    movieAdapter.setMovies(movies);
-                });
+                moviesViewModel.getRomanceMovies().observe(getViewLifecycleOwner(), movieAdapter::setMovies);
                 break;
             default:
                 break;

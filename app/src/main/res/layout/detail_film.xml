@@ -12,8 +12,10 @@
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -35,8 +37,8 @@
                 android:layout_height="200dp"
                 android:background="@drawable/gradient_background"
                 app:layout_constraintBottom_toBottomOf="@+id/picDetail"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayout"
@@ -116,7 +118,7 @@
                 android:layout_marginBottom="16dp"
                 android:text="TextView"
                 android:textColor="@color/text_white"
-                android:textSize="20sp"
+                android:textSize="32dp"
                 app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
                 app:layout_constraintEnd_toEndOf="@+id/constraintLayout3"
                 app:layout_constraintStart_toStartOf="@+id/constraintLayout3" />
@@ -125,6 +127,8 @@
                 android:id="@+id/genreView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:paddingStart="8dp"
                 android:paddingEnd="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -133,58 +137,67 @@
 
             <TextView
                 android:id="@+id/movieSummary"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
                 android:text="Summary"
                 android:textColor="@color/yellow"
                 android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/genreView" />
 
             <TextView
-                android:id="@+id/textView15"
-                android:layout_width="wrap_content"
+                android:id="@+id/summaryText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:text="test"
+                android:textColor="@color/text_white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/movieSummary" />
+
+            <TextView
+                android:id="@+id/movieActor"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:text="Actors"
+                android:textColor="@color/yellow"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/movieSummary"
+                app:layout_constraintTop_toBottomOf="@+id/summaryText" />
+
+            <TextView
+                android:id="@+id/movieActorText"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
                 android:text="test"
                 android:textColor="@color/text_white"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/movieSummary"
-                app:layout_constraintTop_toBottomOf="@+id/movieSummary" />
-
-            <TextView
-                android:id="@+id/textView16"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Actors"
-                android:textColor="@color/yellow"
-                android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="@+id/movieSummary"
-                app:layout_constraintTop_toBottomOf="@+id/textView15" />
-
-            <TextView
-                android:id="@+id/movieActorInfo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="test"
-                android:textColor="@color/text_white"
-                app:layout_constraintStart_toStartOf="@+id/movieSummary"
-                app:layout_constraintTop_toBottomOf="@+id/textView16" />
+                app:layout_constraintTop_toBottomOf="@+id/movieActor" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/imageRecycler"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingEnd="8dp"
+                android:layout_marginTop="8dp"
                 android:paddingStart="8dp"
+                android:paddingEnd="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/movieActorInfo" />
+                app:layout_constraintTop_toBottomOf="@+id/movieActorText" />
 
             <ProgressBar
                 android:id="@+id/progressBarDetail"
@@ -192,6 +205,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_editor_absoluteX="182dp"
                 app:layout_editor_absoluteY="445dp" />
 

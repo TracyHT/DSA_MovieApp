@@ -82,8 +82,8 @@ public class MovieItem {
         return imageUrl;
     }
 
-    public void setImageUrl(String synopsis) {
-        this.imageUrl = synopsis;
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
     // Constructor with basic information
 

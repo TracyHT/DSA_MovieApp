@@ -52,6 +52,15 @@ public class MovieDatabase {
         return foundMovies;
     }
 
+    public MovieItem findMovieById(int id) {
+        for (MovieItem movie : allMovies) {
+            if (movie.getId() == id) {
+                return movie;
+            }
+        }
+        return null; // Return null if the movie with the given id is not found
+    }
+
     // You can add more search methods for different attributes as needed
 }
 
