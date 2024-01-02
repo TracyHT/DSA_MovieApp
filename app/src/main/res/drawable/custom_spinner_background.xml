@@ -1,0 +1,16 @@
+<!-- res/drawable/custom_spinner_background.xml -->
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Background for the entire Spinner -->
+    <item>
+        <shape android:shape="rectangle">
+            <!-- Customize the background color or other attributes here -->
+            <solid android:color="@android:color/transparent" />
+        </shape>
+    </item>
+
+    <!-- Default Spinner background (dropdown icon) -->
+    <item android:drawable="@android:drawable/btn_dropdown" />
+
+</layer-list>
