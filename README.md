@@ -7,7 +7,6 @@ Before running the app, ensure that you have the following prerequisites install
 - Android Studio: Download and install Android Studio 
 - Android Device or Emulator: Ensure you have a physical Android device connected or an emulator configured in Android Studio. 
 
-## Getting Started
 1. Clone the repository to your local machine:
     git clone https://github.com/TracyHT/DSA_MovieApp.git
 2. Open the project in Android Studio.
@@ -34,7 +33,6 @@ Before running the app, ensure that you have the following prerequisites install
 - Nguyễn Đình Thắng - ITITIU21309 
 - Ngô Lê Thiên Ân -  ITITDK21030 
 - Cao Hoàng Khôi Nguyên - ITITDK21048
-
 
 
 
