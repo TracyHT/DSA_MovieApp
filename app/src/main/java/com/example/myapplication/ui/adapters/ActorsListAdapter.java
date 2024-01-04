@@ -1,3 +1,10 @@
+/*  GROUP 17
+    Ngo Le Thien An - ITITDK21030
+    Huynh Thanh Thuy - ITITIU21325
+    Cao Hoang Khoi Nguyen - ITITDK21048
+    Nguyen Dinh Thang - ITITIU21309
+    Purpose: This Java class is a RecyclerView adapter for displaying a list of actor images, loading them using Glide, and utilizing a custom layout for each item.
+*/
 package com.example.myapplication.ui.adapters;
 
 import android.content.Context;

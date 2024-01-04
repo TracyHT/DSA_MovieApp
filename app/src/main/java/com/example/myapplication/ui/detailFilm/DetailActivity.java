@@ -1,3 +1,10 @@
+/*  GROUP 17
+    Ngo Le Thien An - ITITDK21030
+    Huynh Thanh Thuy - ITITIU21325
+    Cao Hoang Khoi Nguyen - ITITDK21048
+    Nguyen Dinh Thang - ITITIU21309
+    Purpose: This Java class represents the detail activity for a film, fetching and displaying information from an API, including the film's title, rating, runtime, plot, actors, and images, using Volley and Gson for network requests and data parsing.
+*/
 package com.example.myapplication.ui.detailFilm;
 
 import android.app.DownloadManager;

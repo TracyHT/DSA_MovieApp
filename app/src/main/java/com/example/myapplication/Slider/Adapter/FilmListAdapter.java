@@ -1,3 +1,10 @@
+/*  GROUP 17
+    Ngo Le Thien An - ITITDK21030
+    Huynh Thanh Thuy - ITITIU21325
+    Cao Hoang Khoi Nguyen - ITITDK21048
+    Nguyen Dinh Thang - ITITIU21309
+    Purpose: This Java class represents a RecyclerView adapter for a film list. It currently provides methods for creating ViewHolders, binding data to ViewHolders, and determining the item count. However, the implementation for these methods is not provided and needs to be completed for the adapter to function properly in a RecyclerView.
+*/
 package com.example.myapplication.Slider.Adapter;
 
 import android.view.View;

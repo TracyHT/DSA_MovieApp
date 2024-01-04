@@ -1,3 +1,10 @@
+/*  GROUP 17
+    Ngo Le Thien An - ITITDK21030
+    Huynh Thanh Thuy - ITITIU21325
+    Cao Hoang Khoi Nguyen - ITITDK21048
+    Nguyen Dinh Thang - ITITIU21309
+    Purpose: This Java class represents a node in a graph, such as a location or point of interest, with attributes including a label, type, and coordinates (x, y). The class provides methods for getting and setting these attributes, including an additional method for specifying the node type.
+*/
 package com.example.myapplication.database.graph_map;
 
 // Node.java

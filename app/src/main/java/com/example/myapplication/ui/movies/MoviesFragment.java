@@ -1,3 +1,10 @@
+/*  GROUP 17
+    Ngo Le Thien An - ITITDK21030
+    Huynh Thanh Thuy - ITITIU21325
+    Cao Hoang Khoi Nguyen - ITITDK21048
+    Nguyen Dinh Thang - ITITIU21309
+    Purpose: This Java class represents an Android fragment for displaying a collection of movies categorized by genre, utilizing a ViewPager2 with TabLayout to switch between different genres and observe movie data changes accordingly.
+*/
 package com.example.myapplication.ui.movies;
 
 import android.os.Bundle;
