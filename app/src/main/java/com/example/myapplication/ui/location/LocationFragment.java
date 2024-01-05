@@ -1,3 +1,10 @@
+/*  GROUP 17
+    Ngo Le Thien An - ITITDK21030
+    Huynh Thanh Thuy - ITITIU21325
+    Cao Hoang Khoi Nguyen - ITITDK21048
+    Nguyen Dinh Thang - ITITIU21309
+    Purpose: This Java class represents a fragment in an Android app that displays a list of cinema locations, allowing users to select a movie theater from a Spinner and dynamically updating the list based on the selection.
+*/
 package com.example.myapplication.ui.location;
 
 import android.os.Bundle;

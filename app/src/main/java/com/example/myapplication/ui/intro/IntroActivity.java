@@ -1,3 +1,10 @@
+/*  GROUP 17
+    Ngo Le Thien An - ITITDK21030
+    Huynh Thanh Thuy - ITITIU21325
+    Cao Hoang Khoi Nguyen - ITITDK21048
+    Nguyen Dinh Thang - ITITIU21309
+    Purpose: This Java class represents the introductory activity of an Android app, providing a button to navigate to the login screen.
+*/
 package com.example.myapplication.ui.intro;
 
 import android.content.Intent;
@@ -27,5 +34,4 @@ public class IntroActivity extends AppCompatActivity {
             }
         });
     }
-
 }

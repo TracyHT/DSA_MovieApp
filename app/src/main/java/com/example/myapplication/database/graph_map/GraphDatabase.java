@@ -1,3 +1,10 @@
+/*  GROUP 17
+    Ngo Le Thien An - ITITDK21030
+    Huynh Thanh Thuy - ITITIU21325
+    Cao Hoang Khoi Nguyen - ITITDK21048
+    Nguyen Dinh Thang - ITITIU21309
+    Purpose: This Java class represents a graph database with methods for initializing data, performing Dijkstra's algorithm to calculate shortest paths from a given node, retrieving information about nodes and edges, and handling live data updates for routes
+*/
 package com.example.myapplication.database.graph_map;
 
 import androidx.lifecycle.MutableLiveData;

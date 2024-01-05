@@ -1,3 +1,10 @@
+/*  GROUP 17
+    Ngo Le Thien An - ITITDK21030
+    Huynh Thanh Thuy - ITITIU21325
+    Cao Hoang Khoi Nguyen - ITITDK21048
+    Nguyen Dinh Thang - ITITIU21309
+    Purpose: This Java class represents an Android activity for user registration, allowing users to input and register with a username, password, email, and phone number, and storing the user data in a UserDatabase.
+*/
 package com.example.myapplication.ui.register;
 
 import android.content.Intent;

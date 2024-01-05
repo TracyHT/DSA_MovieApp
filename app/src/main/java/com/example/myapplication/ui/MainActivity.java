@@ -1,3 +1,10 @@
+/*  GROUP 17
+    Ngo Le Thien An - ITITDK21030
+    Huynh Thanh Thuy - ITITIU21325
+    Cao Hoang Khoi Nguyen - ITITDK21048
+    Nguyen Dinh Thang - ITITIU21309
+    Purpose: This Java class represents the main activity of an Android app, implementing navigation using a BottomNavigationView to switch between Home, Movies, Location, and Profile fragments.
+*/
 package com.example.myapplication.ui;
 
 import android.os.Bundle;
@@ -103,6 +110,4 @@ public class MainActivity extends AppCompatActivity {
         // Commit the transaction
         transaction.commit();
     }
-
-
 }

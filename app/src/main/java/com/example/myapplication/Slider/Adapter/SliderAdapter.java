@@ -1,3 +1,10 @@
+/*  GROUP 17
+    Ngo Le Thien An - ITITDK21030
+    Huynh Thanh Thuy - ITITIU21325
+    Cao Hoang Khoi Nguyen - ITITDK21048
+    Nguyen Dinh Thang - ITITIU21309
+    Purpose: This Java class is a RecyclerView adapter designed for a slider, managing the display of images with Glide, implementing looping behavior, and supporting transformations using the ViewPager2.
+*/
 package com.example.myapplication.Slider.Adapter;
 
 import android.content.Context;

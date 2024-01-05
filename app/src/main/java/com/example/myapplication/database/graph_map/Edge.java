@@ -1,3 +1,10 @@
+/*  GROUP 17
+    Ngo Le Thien An - ITITDK21030
+    Huynh Thanh Thuy - ITITIU21325
+    Cao Hoang Khoi Nguyen - ITITDK21048
+    Nguyen Dinh Thang - ITITIU21309
+    Purpose: This Java class represents an edge in a graph with source and destination node identifiers and a weight associated with the edge.
+*/
 package com.example.myapplication.database.graph_map;
 
 public class Edge {

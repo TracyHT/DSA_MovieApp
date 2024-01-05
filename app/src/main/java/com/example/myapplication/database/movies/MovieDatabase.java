@@ -1,3 +1,10 @@
+/*  GROUP 17
+    Ngo Le Thien An - ITITDK21030
+    Huynh Thanh Thuy - ITITIU21325
+    Cao Hoang Khoi Nguyen - ITITDK21048
+    Nguyen Dinh Thang - ITITIU21309
+    Purpose: This Java class represents a movie database, storing information about movies such as title, genre, duration, director, cast, synopsis, image URL, and rating. It includes methods for adding movies, retrieving all movies, and finding movies based on specific attributes like title or genre.
+*/
 package com.example.myapplication.database.movies;
 
 import java.util.ArrayList;

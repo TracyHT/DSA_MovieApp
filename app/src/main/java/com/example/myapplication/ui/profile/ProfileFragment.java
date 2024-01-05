@@ -1,3 +1,10 @@
+/*  GROUP 17
+    Ngo Le Thien An - ITITDK21030
+    Huynh Thanh Thuy - ITITIU21325
+    Cao Hoang Khoi Nguyen - ITITDK21048
+    Nguyen Dinh Thang - ITITIU21309
+    Purpose: This Java class represents an Android fragment for displaying a user profile with editable information, using data provided by a ProfileViewModel.
+*/
 package com.example.myapplication.ui.profile;
 
 import android.os.Bundle;

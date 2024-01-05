@@ -1,3 +1,10 @@
+/*  GROUP 17
+    Ngo Le Thien An - ITITDK21030
+    Huynh Thanh Thuy - ITITIU21325
+    Cao Hoang Khoi Nguyen - ITITDK21048
+    Nguyen Dinh Thang - ITITIU21309
+    Purpose: This Java class represents a movie repository, acting as an intermediary between the application and the `MovieDatabase`. It provides methods to retrieve all movies and filter movies based on specific attributes, returning the results as LiveData for real-time data observation.
+*/
 // MovieRepository.java
 package com.example.myapplication.database.movies;
 

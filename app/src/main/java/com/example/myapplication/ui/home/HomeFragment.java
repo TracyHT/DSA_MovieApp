@@ -1,3 +1,10 @@
+/*  GROUP 17
+    Ngo Le Thien An - ITITDK21030
+    Huynh Thanh Thuy - ITITIU21325
+    Cao Hoang Khoi Nguyen - ITITDK21048
+    Nguyen Dinh Thang - ITITIU21309
+    Purpose: This Java class represents a fragment for the home screen in an Android app, displaying movie banners in a ViewPager, along with sections for best movies, upcoming movies, and categorized movies using RecyclerViews.
+*/
 package com.example.myapplication.ui.home;
 
 import android.os.Bundle;

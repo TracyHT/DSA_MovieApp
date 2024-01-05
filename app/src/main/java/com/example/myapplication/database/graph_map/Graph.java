@@ -1,3 +1,10 @@
+/*  GROUP 17
+    Ngo Le Thien An - ITITDK21030
+    Huynh Thanh Thuy - ITITIU21325
+    Cao Hoang Khoi Nguyen - ITITDK21048
+    Nguyen Dinh Thang - ITITIU21309
+    Purpose: This Java class represents a graph data structure with methods for adding nodes and edges, getting a list of edges, performing Dijkstra's algorithm to calculate shortest paths from a given node, and retrieving information about nodes in the graph.
+*/
 package com.example.myapplication.database.graph_map;
 import java.util.*;
 
